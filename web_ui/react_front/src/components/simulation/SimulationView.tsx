@@ -12,11 +12,14 @@ import {
   CheckCircle,
   Activity,
   Zap,
-  Shield
+  Shield,
+  Database
 } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { SimulationModal } from './SimulationModal'
+import { SiemIntegrationModal } from './SiemIntegrationModal'
 
 const aptProfiles = [
   { id: 'apt1', name: 'APT1 (Comment Crew)', sophistication: 'High', region: 'China', techniques: ['T1566', 'T1055', 'T1003'] },
@@ -34,6 +37,8 @@ const recentSimulations = [
 export function SimulationView() {
   const [selectedProfile, setSelectedProfile] = useState<string | null>(null)
   const [isRunning, setIsRunning] = useState(false)
+  const [showSimulationModal, setShowSimulationModal] = useState(false)
+  const [showSiemModal, setShowSiemModal] = useState(false)
 
   const startSimulation = () => {
     if (selectedProfile) {
@@ -143,22 +148,20 @@ export function SimulationView() {
                 </div>
                 <div className="flex gap-3">
                   <Button
-                    onClick={startSimulation}
+                    onClick={() => setShowSimulationModal(true)}
                     disabled={!selectedProfile || isRunning}
-                    className="flex items-center gap-2"
-                    variant={isRunning ? "destructive" : "default"}
+                    className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700"
                   >
-                    {isRunning ? (
-                      <>
-                        <StopCircle className="h-4 w-4" />
-                        Stop
-                      </>
-                    ) : (
-                      <>
-                        <PlayCircle className="h-4 w-4" />
-                        Start Simulation
-                      </>
-                    )}
+                    <PlayCircle className="h-4 w-4" />
+                    Advanced Simulation
+                  </Button>
+                  <Button
+                    onClick={() => setShowSiemModal(true)}
+                    variant="outline"
+                    className="flex items-center gap-2 border-green-500 text-green-400 hover:bg-green-500/10"
+                  >
+                    <Database className="h-4 w-4" />
+                    SIEM Integration
                   </Button>
                 </div>
               </div>
@@ -227,6 +230,17 @@ export function SimulationView() {
           </Card>
         </motion.div>
       </div>
+
+      {/* Modals */}
+      <SimulationModal 
+        isOpen={showSimulationModal} 
+        onClose={() => setShowSimulationModal(false)} 
+      />
+      
+      <SiemIntegrationModal 
+        isOpen={showSiemModal} 
+        onClose={() => setShowSiemModal(false)} 
+      />
     </div>
   )
 } 

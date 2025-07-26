@@ -1,6 +1,6 @@
 async function runSimulation(techniqueId) {
     try {
-      const response = await fetch("https://24f15eaeae92.ngrok-free.app/run_test", {
+      const response = await fetch("https://d9d2048e7cce.ngrok-free.app/run_test", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
