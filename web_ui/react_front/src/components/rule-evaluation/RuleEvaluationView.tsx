@@ -295,7 +295,7 @@ export function RuleEvaluationView() {
                       <div className="space-y-3">
                         <div className="flex items-center gap-2">
                           <Target className="h-5 w-5 text-green-400" />
-                          <h3 className="text-lg font-semibold text-white">🎯 MITRE ATT&CK Mapping</h3>
+                          <h3 className="text-lg font-semibold text-white">MITRE ATT&CK Mapping</h3>
                         </div>
                         <div className="bg-green-900/10 border border-green-600/20 rounded-lg p-4">
                           <div className="space-y-3">
@@ -326,7 +326,7 @@ export function RuleEvaluationView() {
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
                             <Code className="h-5 w-5 text-orange-400" />
-                            <h3 className="text-lg font-semibold text-white">📄 Raw Rule</h3>
+                            <h3 className="text-lg font-semibold text-white">Raw Rule</h3>
                           </div>
                           <Button
                             variant="ghost"

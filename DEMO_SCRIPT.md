@@ -1,6 +1,6 @@
 # Detection Lab - Demo Script for Pitch Video
 
-## 🎬 **Demo Flow Overview**
+## **Demo Flow Overview**
 
 ### **Scene 1: Introduction & Problem Statement (30 seconds)**
 - **Visual**: Show the main dashboard with security metrics
@@ -15,7 +15,7 @@
 
 ---
 
-## 🚀 **Core Demo Scenarios**
+## **Core Demo Scenarios**
 
 ### **Scenario 1: APT Attack Simulation (2 minutes)**
 
@@ -107,7 +107,7 @@
 
 ---
 
-## 🎯 **Key Value Propositions to Highlight**
+## **Key Value Propositions to Highlight**
 
 ### **1. Automation & Efficiency**
 - **Point**: "What used to take security teams weeks of manual testing now happens automatically in minutes"
@@ -131,7 +131,7 @@
 
 ---
 
-## 📊 **Technical Specifications to Mention**
+## **Technical Specifications to Mention**
 
 ### **Supported APT Groups**
 - APT29 (Cozy Bear) - Russian state-sponsored
@@ -161,7 +161,7 @@
 
 ---
 
-## 🎬 **Video Production Notes**
+## **Video Production Notes**
 
 ### **Camera Angles**
 - **Wide shot**: Show entire dashboard layout
@@ -188,7 +188,7 @@
 
 ---
 
-## 🎯 **Call to Action**
+## **Call to Action**
 
 ### **Ending Message**
 "Detection Lab transforms how organizations validate their security posture. From automated APT simulations to multi-SIEM integration, we provide the tools you need to build robust detection capabilities. Ready to see your security infrastructure in action? Let's get started."
@@ -200,7 +200,7 @@
 
 ---
 
-## 📋 **Demo Checklist**
+## **Demo Checklist**
 
 ### **Pre-Demo Setup**
 - [ ] All SIEM connections configured

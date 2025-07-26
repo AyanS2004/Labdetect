@@ -4,12 +4,12 @@
 
 ---
 
-## 🚀 Overview
+## Overview
 Detection Lab is a next-generation cybersecurity platform for running automated, MITRE-mapped breach simulations, streaming real-time telemetry to multiple SIEMs, and converting detection rules across SIEM formats. It empowers security teams to validate detection coverage, identify gaps, and improve their security posture with ease.
 
 ---
 
-## ✨ Features
+## Features
 - **Automated APT Simulations**: Run realistic attack chains mapped to MITRE ATT&CK (e.g., APT29, Lazarus, APT41)
 - **Live Telemetry Streaming**: Generate and stream authentic security events to SIEMs (Splunk, Elastic, Grafana, QRadar)
 - **Multi-SIEM Rule Conversion**: Instantly convert detection rules between Splunk SPL, Elastic YAML, QRadar XML, and Sigma formats using PySigma
@@ -20,7 +20,7 @@ Detection Lab is a next-generation cybersecurity platform for running automated,
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 - **Frontend**: React (Next.js), Zustand, Tailwind CSS, Radix UI, Framer Motion
 - **Backend**: Flask (Python), MongoDB, PySigma, Docker
 - **Authentication**: JWT, Flask-CORS
@@ -34,7 +34,7 @@ Detection Lab is a next-generation cybersecurity platform for running automated,
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 ### 1. **Clone the Repository**
 ```bash
@@ -70,7 +70,7 @@ npm run dev
 
 ---
 
-## 🔑 Usage
+## Usage
 - **Sign in/Register**: Create an account and log in
 - **Run Simulation**: Select an APT group and launch a breach simulation
 - **View Attack Chain**: Watch real-time progress mapped to MITRE techniques
@@ -80,7 +80,7 @@ npm run dev
 
 ---
 
-## 🛠️ Configuration
+## Configuration
 - **Environment Variables**: Set in `.env` (see `.env.example`)
   - `MONGODB_URI`, `JWT_SECRET`, `PORT`, etc.
 - **SIEM Endpoints**: Configure in the app settings modal
@@ -88,19 +88,19 @@ npm run dev
 
 ---
 
-## 📚 Documentation
+## Documentation
 - In-app documentation available via the sidebar "Help" button
 - MITRE technique mapping, SIEM integration, and rule conversion guides included
 
 ---
 
-## 🧪 Testing
+## Testing
 - Use the provided `test_database.py` to populate MongoDB with sample data
 - Run simulations and verify telemetry in your SIEM (Splunk, Elastic, etc.)
 
 ---
 
-## 👥 Contributing
+## Contributing
 1. Fork the repo and create your feature branch (`git checkout -b feature/your-feature`)
 2. Commit your changes (`git commit -am 'Add new feature'`)
 3. Push to the branch (`git push origin feature/your-feature`)
@@ -108,19 +108,19 @@ npm run dev
 
 ---
 
-## 📄 License
+## License
 [MIT](LICENSE)
 
 ---
 
-## 📞 Contact & Support
+## Contact & Support
 - **Website**: [detectionlab.com]
 - **Email**: contact@detectionlab.com
 - **Demo Requests**: demo@detectionlab.com
 
 ---
 
-## 🙏 Acknowledgements
+## Acknowledgements
 - MITRE ATT&CK
 - Atomic Red Team, Caldera, PurpleSharp
 - PySigma, Detection Studio
