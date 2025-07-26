@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .animate-in {
+    animation: fade-in 0.5s ease-out;
+  }
+  
+  .status-indicator {
+    @apply inline-flex items-center justify-center w-3 h-3 rounded-full shadow-sm;
+  }
+  
+  .status-green {
+    @apply bg-emerald-500 animate-pulse shadow-emerald-500/25;
+  }
+  
+  .status-amber {
+    @apply bg-amber-500 animate-pulse shadow-amber-500/25;
+  }
+  
+  .status-red {
+    @apply bg-red-500 animate-pulse shadow-red-500/25;
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-xl bg-slate-900/40 border border-slate-700/30;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+  
+  .cyber-grid {
+    background-image: 
+      linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.6));
+    border: 1px solid transparent;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    background: linear-gradient(145deg, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.2), transparent);
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask-composite: xor;
+  }
+} 
+
+/* Modal z-index hierarchy */
+.modal-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(4px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.modal-auth {
+  z-index: 60000 !important;
+}
+
+.modal-notifications {
+  z-index: 999999 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+
+.modal-app-config {
+  z-index: 45000 !important;
+}
+
+.modal-documentation {
+  z-index: 42000 !important;
+}
+
+.modal-settings {
+  z-index: 40000 !important;
+}
+
+/* Ensure modals appear above all other content */
+.modal-content {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Ensure notifications modal content has maximum z-index */
+.modal-notifications .modal-content {
+  z-index: 1000000 !important;
+}
+
+/* Override any potential conflicting z-index values */
+.modal-notifications * {
+  position: relative;
+}
+
+/* Dashboard and other elements should never exceed these values */
+.dashboard-content {
+  z-index: 1000;
+}
+
+.sidebar-nav {
+  z-index: 1000;
+}
+
+.topbar {
+  z-index: 1000;
+} 
