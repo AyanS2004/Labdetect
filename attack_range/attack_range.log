@@ -1,0 +1,1073 @@
+[0m[1mInitializing the backend...[0m
+[0m[1mInitializing modules...[0m
+[0m[1mInitializing provider plugins...[0m
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/aws v6.5.0
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+[33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mDeprecated flag: -state[0m
+[33m│[0m [0m
+[33m│[0m [0m[0mUse the "path" attribute within the "local" backend to specify a file for
+[33m│[0m [0mstate storage
+[33m╵[0m[0m
+[0m[1mmodule.windows-server.data.aws_availability_zones.available: Reading...[0m[0m
+[0m[1mmodule.splunk-server.data.aws_ami.splunk_server[0]: Reading...[0m[0m
+[0m[1mmodule.networkModule.data.aws_availability_zones.available: Reading...[0m[0m
+[0m[1mmodule.networkModule.module.vpc.aws_vpc.this[0]: Refreshing state... [id=vpc-00896b5c5a84ee3b1][0m
+[0m[1mmodule.networkModule.data.aws_availability_zones.available: Read complete after 1s [id=us-east-1][0m
+[0m[1mmodule.windows-server.data.aws_availability_zones.available: Read complete after 1s [id=us-east-1][0m
+[0m[1mmodule.splunk-server.data.aws_ami.splunk_server[0]: Read complete after 2s [id=ami-09ac0b140f63d3458][0m
+[0m[1mmodule.networkModule.module.vpc.aws_default_route_table.default[0]: Refreshing state... [id=rtb-05a4c0fa338a9e891][0m
+[0m[1mmodule.networkModule.module.vpc.aws_default_network_acl.this[0]: Refreshing state... [id=acl-0086d8b193ddd890c][0m
+[0m[1mmodule.networkModule.module.vpc.aws_internet_gateway.this[0]: Refreshing state... [id=igw-0efe6a5aaaf929016][0m
+[0m[1mmodule.networkModule.module.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-0ac89a2417db0d726][0m
+[0m[1mmodule.networkModule.module.vpc.aws_default_security_group.this[0]: Refreshing state... [id=sg-0998003d01b685427][0m
+[0m[1mmodule.networkModule.module.vpc.aws_route_table.public[0]: Refreshing state... [id=rtb-04406b8705d8043fe][0m
+[0m[1mmodule.networkModule.aws_security_group.default: Refreshing state... [id=sg-0a95e55456a1bcc85][0m
+[0m[1mmodule.networkModule.module.vpc.aws_route.public_internet_gateway[0]: Refreshing state... [id=r-rtb-04406b8705d8043fe1080289494][0m
+[0m[1mmodule.networkModule.module.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-0f5c77acfceb5e23a][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # module.splunk-server.aws_eip.splunk_ip[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_eip" "splunk_ip" {
+      [32m+[0m[0m allocation_id        = (known after apply)
+      [32m+[0m[0m arn                  = (known after apply)
+      [32m+[0m[0m association_id       = (known after apply)
+      [32m+[0m[0m carrier_ip           = (known after apply)
+      [32m+[0m[0m customer_owned_ip    = (known after apply)
+      [32m+[0m[0m domain               = (known after apply)
+      [32m+[0m[0m id                   = (known after apply)
+      [32m+[0m[0m instance             = (known after apply)
+      [32m+[0m[0m ipam_pool_id         = (known after apply)
+      [32m+[0m[0m network_border_group = (known after apply)
+      [32m+[0m[0m network_interface    = (known after apply)
+      [32m+[0m[0m private_dns          = (known after apply)
+      [32m+[0m[0m private_ip           = (known after apply)
+      [32m+[0m[0m ptr_record           = (known after apply)
+      [32m+[0m[0m public_dns           = (known after apply)
+      [32m+[0m[0m public_ip            = (known after apply)
+      [32m+[0m[0m public_ipv4_pool     = (known after apply)
+      [32m+[0m[0m region               = "us-east-1"
+      [32m+[0m[0m tags_all             = (known after apply)
+    }
+
+[1m  # module.splunk-server.aws_instance.splunk-server[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_instance" "splunk-server" {
+      [32m+[0m[0m ami                                  = "ami-09ac0b140f63d3458"
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m associate_public_ip_address          = true
+      [32m+[0m[0m availability_zone                    = (known after apply)
+      [32m+[0m[0m disable_api_stop                     = (known after apply)
+      [32m+[0m[0m disable_api_termination              = (known after apply)
+      [32m+[0m[0m ebs_optimized                        = (known after apply)
+      [32m+[0m[0m enable_primary_ipv6                  = (known after apply)
+      [32m+[0m[0m get_password_data                    = false
+      [32m+[0m[0m host_id                              = (known after apply)
+      [32m+[0m[0m host_resource_group_arn              = (known after apply)
+      [32m+[0m[0m iam_instance_profile                 = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_initiated_shutdown_behavior = (known after apply)
+      [32m+[0m[0m instance_lifecycle                   = (known after apply)
+      [32m+[0m[0m instance_state                       = (known after apply)
+      [32m+[0m[0m instance_type                        = "t3.2xlarge"
+      [32m+[0m[0m ipv6_address_count                   = (known after apply)
+      [32m+[0m[0m ipv6_addresses                       = (known after apply)
+      [32m+[0m[0m key_name                             = "ar-lab-key-pair"
+      [32m+[0m[0m monitoring                           = (known after apply)
+      [32m+[0m[0m outpost_arn                          = (known after apply)
+      [32m+[0m[0m password_data                        = (known after apply)
+      [32m+[0m[0m placement_group                      = (known after apply)
+      [32m+[0m[0m placement_partition_number           = (known after apply)
+      [32m+[0m[0m primary_network_interface_id         = (known after apply)
+      [32m+[0m[0m private_dns                          = (known after apply)
+      [32m+[0m[0m private_ip                           = "10.0.1.12"
+      [32m+[0m[0m public_dns                           = (known after apply)
+      [32m+[0m[0m public_ip                            = (known after apply)
+      [32m+[0m[0m region                               = "us-east-1"
+      [32m+[0m[0m secondary_private_ips                = (known after apply)
+      [32m+[0m[0m security_groups                      = (known after apply)
+      [32m+[0m[0m source_dest_check                    = true
+      [32m+[0m[0m spot_instance_request_id             = (known after apply)
+      [32m+[0m[0m subnet_id                            = "subnet-0ac89a2417db0d726"
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "Name" = "ar-splunk-ar-lab-key-pair-ar"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "Name" = "ar-splunk-ar-lab-key-pair-ar"
+        }
+      [32m+[0m[0m tenancy                              = (known after apply)
+      [32m+[0m[0m user_data_base64                     = (known after apply)
+      [32m+[0m[0m user_data_replace_on_change          = false
+      [32m+[0m[0m vpc_security_group_ids               = [
+          [32m+[0m[0m "sg-0a95e55456a1bcc85",
+        ]
+
+      [32m+[0m[0m capacity_reservation_specification (known after apply)
+
+      [32m+[0m[0m cpu_options (known after apply)
+
+      [32m+[0m[0m ebs_block_device (known after apply)
+
+      [32m+[0m[0m enclave_options (known after apply)
+
+      [32m+[0m[0m ephemeral_block_device (known after apply)
+
+      [32m+[0m[0m instance_market_options (known after apply)
+
+      [32m+[0m[0m maintenance_options (known after apply)
+
+      [32m+[0m[0m metadata_options (known after apply)
+
+      [32m+[0m[0m network_interface (known after apply)
+
+      [32m+[0m[0m private_dns_name_options (known after apply)
+
+      [32m+[0m[0m root_block_device {
+          [32m+[0m[0m delete_on_termination = true
+          [32m+[0m[0m device_name           = (known after apply)
+          [32m+[0m[0m encrypted             = (known after apply)
+          [32m+[0m[0m iops                  = (known after apply)
+          [32m+[0m[0m kms_key_id            = (known after apply)
+          [32m+[0m[0m tags_all              = (known after apply)
+          [32m+[0m[0m throughput            = (known after apply)
+          [32m+[0m[0m volume_id             = (known after apply)
+          [32m+[0m[0m volume_size           = 120
+          [32m+[0m[0m volume_type           = "gp2"
+        }
+    }
+
+[1mPlan:[0m 2 to add, 0 to change, 0 to destroy.
+[0m[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Creating...[0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [00m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [00m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Provisioning with 'remote-exec'...[0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (remote-exec):[0m [0mConnecting to remote host via SSH...
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (remote-exec):[0m [0m  Host: 52.90.11.117
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (remote-exec):[0m [0m  User: ubuntu
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (remote-exec):[0m [0m  Password: false
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (remote-exec):[0m [0m  Private key: true
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (remote-exec):[0m [0m  Certificate: false
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (remote-exec):[0m [0m  SSH Agent: true
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (remote-exec):[0m [0m  Checking Host Key: false
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (remote-exec):[0m [0m  Target Platform: unix
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (remote-exec):[0m [0mConnected!
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (remote-exec):[0m [0mbooted
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [00m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Provisioning with 'local-exec'...[0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mExecuting: ["/bin/sh" "-c" "cat <<EOF > vars/splunk_vars.json\n{\n  \"ansible_python_interpreter\": \"/usr/bin/python3\",\n  \"general\": {\"attack_range_name\":\"ar\",\"attack_range_password\":\"MySuperSecureHackathonPass!2025\",\"carbon_black_cloud\":\"0\",\"carbon_black_cloud_company_code\":\"\",\"carbon_black_cloud_s3_bucket\":\"\",\"cisco_secure_endpoint\":\"0\",\"cisco_secure_endpoint_api_host\":\"api.amp.cisco.com\",\"cisco_secure_endpoint_api_id\":\"\",\"cisco_secure_endpoint_api_secret\":\"\",\"cloud_provider\":\"aws\",\"crowdstrike_customer_ID\":\"\",\"crowdstrike_falcon\":\"0\",\"crowdstrike_logs_access_key_id\":\"\",\"crowdstrike_logs_region\":\"\",\"crowdstrike_logs_secret_access_key\":\"\",\"crowdstrike_logs_sqs_url\":\"\",\"install_contentctl\":\"0\",\"ip_whitelist\":\"0.0.0.0/0\",\"key_name\":\"ar-lab-key-pair\",\"statepath\":\"/home/osboxes/attack_range/modules/../terraform/aws/state/ar.terraform.tfstate\"},\n  \"aws\": {\"cloudtrail\":\"0\",\"cloudtrail_sqs_queue\":\"https://sqs.us-west-2.amazonaws.com/111111111111/cloudtrail-cloud-attack-range\",\"private_key_path\":\"~/.ssh/id_rsa\",\"region\":\"us-east-1\",\"tf_remote_state_dynamo_db_table\":\"test\",\"tf_remote_state_s3_bucket\":\"test\",\"use_elastic_ips\":\"1\",\"use_remote_state\":\"0\"},\n  \"splunk_server\": {\"byo_splunk\":\"0\",\"byo_splunk_ip\":\"\",\"ingest_bots3_data\":\"0\",\"install_dltk\":\"0\",\"install_es\":\"0\",\"s3_bucket_url\":\"https://attack-range-appbinaries.s3-us-west-2.amazonaws.com\",\"splunk_apps\":\"TA-aurora-0.2.0.tar.gz,TA-osquery.tar.gz,app-for-circleci_011.tgz,cisco-endpoint-security-analytics-(cesa)-add-on-for-splunk_407.tgz,cisco-secure-endpoint-(formerly-amp-for-endpoints)-cim-add-on_212.tgz,cisco-secure-endpoint-(formerly-amp-for-endpoints)_300.tgz,cisco-security-cloud_331.tgz,cisco-splunk-add-on-for-appdynamics_314.tgz,microsoft-defender-advanced-hunting-add-on-for-splunk_141.tgz,palo-alto-networks-add-on-for-splunk_813.tgz,punchcard---custom-visualization_150.tgz,python-for-scientific-computing-(for-linux-64-bit)_423.tgz,snort-3-json-alerts_105.tgz,snort-alert-for-splunk_112.tgz,splunk-add-on-for-amazon-web-services-(aws)_7100.tgz,splunk-add-on-for-crowdstrike-fdr_205.tgz,splunk-add-on-for-github_320.tgz,splunk-add-on-for-google-workspace_304.tgz,splunk-add-on-for-microsoft-cloud-services_550.tgz,splunk-add-on-for-microsoft-office-365_481.tgz,splunk-add-on-for-microsoft-security_254.tgz,splunk-add-on-for-microsoft-windows_901.tgz,splunk-add-on-for-nginx_330.tgz,splunk-add-on-for-okta-identity-cloud_400.tgz,splunk-add-on-for-palo-alto-networks_201.tgz,splunk-add-on-for-sysmon-for-linux_100.tgz,splunk-add-on-for-sysmon_403.tgz,splunk-add-on-for-unix-and-linux_1010.tgz,splunk-add-on-for-vmware-esxi-logs_421.tgz,splunk-app-for-stream_815.tgz,splunk-common-information-model-(cim)_610.tgz,splunk-es-content-update_5100.tgz,splunk-machine-learning-toolkit_560.tgz,splunk-sankey-diagram---custom-visualization_160.tgz,splunk-security-essentials_382.tgz,splunk-ta-for-suricata_233.tgz,splunk-timeline---custom-visualization_162.tgz,splunk_attack_range_reporting-1.0.9.tar.gz,status-indicator---custom-visualization_150.tgz,ta-for-zeek_1010.tgz,vmware-carbon-black-cloud_225.tgz\",\"splunk_es_app\":\"splunk-enterprise-security_731.spl\",\"splunk_uf_url\":\"https://download.splunk.com/products/universalforwarder/releases/9.3.0/linux/splunkforwarder-9.3.0-51ccf43db5bd-linux-2.6-amd64.deb\",\"splunk_uf_win_url\":\"https://download.splunk.com/products/universalforwarder/releases/9.3.0/windows/splunkforwarder-9.3.0-51ccf43db5bd-x64-release.msi\",\"splunk_url\":\"https://download.splunk.com/products/splunk/releases/9.3.0/linux/splunk-9.3.0-51ccf43db5bd-Linux-x86_64.tgz\"},\n  \"phantom_server\": {\"phantom_app\":\"splunk_soar-unpriv-6.3.1.178-d86bf7c2-el8-x86_64.tgz\",\"phantom_byo\":\"0\",\"phantom_byo_api_token\":\"\",\"phantom_byo_ip\":\"\",\"phantom_server\":\"0\"},\n  \"simulation\": {\"atomic_red_team_branch\":\"master\",\"atomic_red_team_repo\":\"redcanaryco\",\"cap_attack\":\"0\",\"cap_attack_upload_threat_capture\":\"0\",\"snapattack_api_key\":\"\"},\n  \"kali_server\": {\"kali_server\":\"0\"},\n  \"zeek_server\": {\"zeek_server\":\"0\"},\n  \"windows_servers\": [],\n  \"linux_servers\": [],\n  \"snort_server\": {\"snort_server\":\"0\"}\n}\nEOF\n"]
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Provisioning with 'local-exec'...[0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mExecuting: ["/bin/sh" "-c" "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ubuntu --private-key '~/.ssh/id_rsa' -i '52.90.11.117,' splunk_server.yml -e \"@vars/splunk_vars.json\"\n"]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mPLAY [all] *********************************************************************
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [linux_common : include_tasks] ********************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/linux_common/tasks/disable-dnssec.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [linux_common : Create resolved.conf.d] ***********************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [00m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [linux_common : Disable DNSSEC] *******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [00m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [01m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [linux_common : Restart systemd-resolved] *********************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [01m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [01m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [linux_common : include_tasks] ********************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/linux_common/tasks/disable-autoupgrade.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [linux_common : disable ubuntu autoupgrade] *******************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [01m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [linux_common : include_tasks] ********************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/linux_common/tasks/update_sshd_config.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [linux_common : Configure sshd] *******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [01m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [01m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117] => (item={'key': 'HostKeyAlgorithms', 'value': '+ssh-rsa'})
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117] => (item={'key': 'PubkeyAcceptedKeyTypes', 'value': '+ssh-rsa'})
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [linux_common : Restart SSHd] *********************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [02m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [linux_common : include_tasks] ********************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/linux_common/tasks/update_rsyslog_logrotate.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [linux_common : copy rsyslog logrotate config template] *******************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [02m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [02m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : include_tasks] *******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/splunk.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk] *****************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [02m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [02m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : install splunk binary] ***********************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [02m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [03m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [03m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [03m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [03m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [03m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [03m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : migrate to WiredTiger] ***********************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [04m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : accept license and start splunk] *************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [04m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [04m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [04m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : enable boot-start] ***************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : restart splunk] ******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [04m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [04m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : include_tasks] *******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/configure_inputs.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Create folder directory for inputs configuration] ********
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117] => (item=/opt/splunk/etc/apps/inputs_app/local/)
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : copy inputs.conf] ****************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [05m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [05m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : include_tasks] *******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/configure_indexes.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Create folder directory for indexes configuration] *******
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [05m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117] => (item=/opt/splunk/etc/apps/indexes_app/local/)
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : copy indexes.conf to splunk server] **********************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [05m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [05m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : copy authorize.conf for default searchable indexes_app] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [05m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : include_tasks] *******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/configure_limits.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Create folder directory for indexes configuration] *******
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [06m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117] => (item=/opt/splunk/etc/apps/limits_app/local/)
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : copy limits.conf to splunk server] ***********************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [06m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [06m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : include_tasks] *******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/configure_web_conf.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Create folder directory for web configuration] ***********
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117] => (item=/opt/splunk/etc/apps/system/local/)
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : copy web.conf to splunk server] **************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [06m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [06m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : include_tasks] *******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/configure_server_conf.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Create folder directory for server configuration] ********
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [06m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117] => (item=/opt/splunk/etc/apps/server_app/local/)
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : copy server.conf to splunk server] ***********************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [07m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [07m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : restart splunk] ******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [07m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [07m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [07m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [07m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : include_tasks] *******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/create_serverclass.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : copy serverclass.conf to splunk server] ******************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [08m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Convert splunk_apps string to list] **********************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [08m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : include_tasks] *******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=TA-aurora-0.2.0.tar.gz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=TA-osquery.tar.gz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=app-for-circleci_011.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=cisco-endpoint-security-analytics-(cesa)-add-on-for-splunk_407.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=cisco-secure-endpoint-(formerly-amp-for-endpoints)-cim-add-on_212.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=cisco-secure-endpoint-(formerly-amp-for-endpoints)_300.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=cisco-security-cloud_331.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=cisco-splunk-add-on-for-appdynamics_314.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=microsoft-defender-advanced-hunting-add-on-for-splunk_141.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=palo-alto-networks-add-on-for-splunk_813.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=punchcard---custom-visualization_150.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=python-for-scientific-computing-(for-linux-64-bit)_423.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=snort-3-json-alerts_105.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=snort-alert-for-splunk_112.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-add-on-for-amazon-web-services-(aws)_7100.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-add-on-for-crowdstrike-fdr_205.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-add-on-for-github_320.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-add-on-for-google-workspace_304.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-add-on-for-microsoft-cloud-services_550.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-add-on-for-microsoft-office-365_481.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-add-on-for-microsoft-security_254.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-add-on-for-microsoft-windows_901.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-add-on-for-nginx_330.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-add-on-for-okta-identity-cloud_400.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-add-on-for-palo-alto-networks_201.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-add-on-for-sysmon-for-linux_100.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-add-on-for-sysmon_403.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-add-on-for-unix-and-linux_1010.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-add-on-for-vmware-esxi-logs_421.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-app-for-stream_815.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-common-information-model-(cim)_610.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-es-content-update_5100.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-machine-learning-toolkit_560.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-sankey-diagram---custom-visualization_160.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-security-essentials_382.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-ta-for-suricata_233.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk-timeline---custom-visualization_162.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=splunk_attack_range_reporting-1.0.9.tar.gz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=status-indicator---custom-visualization_150.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=ta-for-zeek_1010.tgz)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/install_app_from_s3.yml for 52.90.11.117 => (item=vmware-carbon-black-cloud_225.tgz)
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download TA-aurora-0.2.0.tar.gz from S3 bucket] **********
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install TA-aurora-0.2.0.tar.gz via REST] *****************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [08m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download TA-osquery.tar.gz from S3 bucket] ***************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [08m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install TA-osquery.tar.gz via REST] **********************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [08m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download app-for-circleci_011.tgz from S3 bucket] ********
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [08m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install app-for-circleci_011.tgz via REST] ***************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [09m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download cisco-endpoint-security-analytics-(cesa)-add-on-for-splunk_407.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install cisco-endpoint-security-analytics-(cesa)-add-on-for-splunk_407.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [09m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download cisco-secure-endpoint-(formerly-amp-for-endpoints)-cim-add-on_212.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [09m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install cisco-secure-endpoint-(formerly-amp-for-endpoints)-cim-add-on_212.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [09m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download cisco-secure-endpoint-(formerly-amp-for-endpoints)_300.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install cisco-secure-endpoint-(formerly-amp-for-endpoints)_300.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [09m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download cisco-security-cloud_331.tgz from S3 bucket] ****
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [09m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install cisco-security-cloud_331.tgz via REST] ***********
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [10m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [10m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download cisco-splunk-add-on-for-appdynamics_314.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install cisco-splunk-add-on-for-appdynamics_314.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [10m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [10m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download microsoft-defender-advanced-hunting-add-on-for-splunk_141.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install microsoft-defender-advanced-hunting-add-on-for-splunk_141.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [10m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download palo-alto-networks-add-on-for-splunk_813.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [10m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install palo-alto-networks-add-on-for-splunk_813.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [11m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download punchcard---custom-visualization_150.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [11m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install punchcard---custom-visualization_150.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [11m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download python-for-scientific-computing-(for-linux-64-bit)_423.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [11m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [11m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [11m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install python-for-scientific-computing-(for-linux-64-bit)_423.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [12m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [12m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [12m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download snort-3-json-alerts_105.tgz from S3 bucket] *****
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [12m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install snort-3-json-alerts_105.tgz via REST] ************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [12m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download snort-alert-for-splunk_112.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install snort-alert-for-splunk_112.tgz via REST] *********
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [12m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-add-on-for-amazon-web-services-(aws)_7100.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [13m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-add-on-for-amazon-web-services-(aws)_7100.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [13m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [13m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [13m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-add-on-for-crowdstrike-fdr_205.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [13m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-add-on-for-crowdstrike-fdr_205.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [13m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [14m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-add-on-for-github_320.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [14m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-add-on-for-github_320.tgz via REST] *******
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [14m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-add-on-for-google-workspace_304.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [14m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-add-on-for-google-workspace_304.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [14m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-add-on-for-microsoft-cloud-services_550.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [14m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-add-on-for-microsoft-cloud-services_550.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [15m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [15m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-add-on-for-microsoft-office-365_481.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [15m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-add-on-for-microsoft-office-365_481.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [15m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [15m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [15m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-add-on-for-microsoft-security_254.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [16m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-add-on-for-microsoft-security_254.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [16m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-add-on-for-microsoft-windows_901.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [16m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-add-on-for-microsoft-windows_901.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [16m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-add-on-for-nginx_330.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [16m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-add-on-for-nginx_330.tgz via REST] ********
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [16m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-add-on-for-okta-identity-cloud_400.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [17m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-add-on-for-okta-identity-cloud_400.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [17m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-add-on-for-palo-alto-networks_201.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [17m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-add-on-for-palo-alto-networks_201.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [17m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-add-on-for-sysmon-for-linux_100.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [17m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-add-on-for-sysmon-for-linux_100.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [17m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-add-on-for-sysmon_403.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [18m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-add-on-for-sysmon_403.tgz via REST] *******
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [18m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-add-on-for-unix-and-linux_1010.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [18m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-add-on-for-unix-and-linux_1010.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [18m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-add-on-for-vmware-esxi-logs_421.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-add-on-for-vmware-esxi-logs_421.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [18m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-app-for-stream_815.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [18m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-app-for-stream_815.tgz via REST] **********
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [19m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [19m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-common-information-model-(cim)_610.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [19m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-common-information-model-(cim)_610.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [19m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-es-content-update_5100.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [19m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-es-content-update_5100.tgz via REST] ******
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [19m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-machine-learning-toolkit_560.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-machine-learning-toolkit_560.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [20m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-sankey-diagram---custom-visualization_160.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [20m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-sankey-diagram---custom-visualization_160.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [20m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-security-essentials_382.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [20m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-security-essentials_382.tgz via REST] *****
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [20m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-ta-for-suricata_233.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [20m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-ta-for-suricata_233.tgz via REST] *********
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [21m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk-timeline---custom-visualization_162.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [21m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk-timeline---custom-visualization_162.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [21m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download splunk_attack_range_reporting-1.0.9.tar.gz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [21m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install splunk_attack_range_reporting-1.0.9.tar.gz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download status-indicator---custom-visualization_150.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [21m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install status-indicator---custom-visualization_150.tgz via REST] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [21m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download ta-for-zeek_1010.tgz from S3 bucket] ************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [22m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install ta-for-zeek_1010.tgz via REST] *******************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [22m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : download vmware-carbon-black-cloud_225.tgz from S3 bucket] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [22m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Install vmware-carbon-black-cloud_225.tgz via REST] ******
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [22m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : include_tasks] *******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/share_zeek_TA_system.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : copy local.meta to splunk server] ************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [22m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [22m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : include_tasks] *******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/configure_attack_range_dashboard.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Create folder directory for user-prefs configuration] ****
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [23m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117] => (item=/opt/splunk/etc/users/admin/user-prefs/local/)
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : copy user-prefs.conf to splunk server] *******************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [23m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [23m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : include_tasks] *******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/configure_escu.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Create local folder directory] ***************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117] => (item=/opt/splunk/etc/apps/DA-ESS-ContentUpdate/local/)
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : include_tasks] *******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/configure_props.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Copy new props.conf configuration] ***********************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [23m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [23m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : include_tasks] *******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/configure_cim.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : Create local folder directory] ***************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [23m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117] => (item=/opt/splunk/etc/apps/Splunk_SA_CIM/local/)
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : copy datamodels.conf to splunk server] *******************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [24m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : include_tasks] *******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server/tasks/configure_phantom.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : create local folder for phantom app] *********************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [24m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server : copy phantom.conf to splunk server] **********************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [24m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [24m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server_post : Change the hostname] ********************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [24m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server_post : include_tasks] **************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/splunk_server_post/tasks/change_splunk_password.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server_post : change password splunk] *****************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server_post : restart splunk] *************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [24m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [25m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [25m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [25m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [25m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [25m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [25m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [26m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [26m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [26m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [26m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [26m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [26m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [27m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server_post : include_tasks] **************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mskipping: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server_post : include_tasks] **************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mskipping: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server_post : include_tasks] **************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mskipping: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server_post : include_tasks] **************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mskipping: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [splunk_server_post : include_tasks] **************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mskipping: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [phantom_byo_splunk : include_tasks] **************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mskipping: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [cloudtrail_logs : include_tasks] *****************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/cloudtrail_logs/tasks/configure_inputs.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [cloudtrail_logs : Create folder directory for AWS TA] ********************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mskipping: [52.90.11.117] => (item=/opt/splunk/etc/apps/Splunk_TA_aws/local/)
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mskipping: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [cloudtrail_logs : Copy new aws_account_ext.conf configuration] ***********
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mskipping: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [cloudtrail_logs : Copy new inputs.conf configuration] ********************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mskipping: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [azure_logging : include_tasks] *******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mskipping: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [carbon_black_cloud_logs : include_tasks] *********************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mskipping: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [crowdstrike_falcon_logging : include_tasks] ******************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mskipping: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [crowdstrike_falcon_logging : restart splunk] *****************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mskipping: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : include_tasks] ***********************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/guacamole/tasks/install_packages.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Update apt-get repo and cache] *******************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [27m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [27m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Install each and every of the dependencies that our Guacamole server will require to breath and live.] ***
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [27m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [27m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [27m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [28m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [28m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [28m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Add FreeRDP2 repository key] *********************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [28m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Add FreeRDP2 repository] *************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [28m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Update apt-get repo and cache] *******************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [28m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Install FreeRDP] *********************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [29m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [29m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : include_tasks] ***********************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/guacamole/tasks/setup_tomcat.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Create Tomcat system user] ***********************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Download Apache Tomcat] **************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [29m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Extract the tar file to the /opt/tomcat directory] ***********
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [29m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Give neccessary permissions] *********************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [29m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Copy tomcat.service file] ************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [29m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [30m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : System daemon reload] ****************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Enable tomcat] ***********************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [30m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Restart tomcat] **********************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [30m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : include_tasks] ***********************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/guacamole/tasks/guacamole_server.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Download Guacamole] ******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [30m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Extract the source tarball after download] *******************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [30m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Configure and install Guacamole] *****************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [30m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [31m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [31m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [31m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [31m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [31m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : System daemon reload] ****************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [31m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mok: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Enable guacd] ************************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [32m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Restart guacd] ***********************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [32m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : include_tasks] ***********************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/guacamole/tasks/guacamole_client.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Make Guacamole directory] ************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [32m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Download Guacamole Client] ***********************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [32m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Move .war] ***************************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [32m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : link guacamole.war] ******************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [32m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : include_tasks] ***********************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mincluded: /home/osboxes/attack_range/terraform/ansible/roles/guacamole/tasks/guacamole_server_post.yml for 52.90.11.117
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Configure Guacamole Server] **********************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [33m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Copy guacamole.properties file] ******************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [33m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : link guacamole] **********************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [33m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Give permission] *********************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [33m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Copy user-mapping.xml] ***************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [33m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Create a new folder] *****************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [33m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Copy user-mapping-local.xml] *********************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mskipping: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [guacamole : Restart guacd and tomcat] ************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [34m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mTASK [cisco_secure_endpoint_logs : include_tasks] ******************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mskipping: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mRUNNING HANDLER [splunk_server : restart splunk] *******************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [34m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [34m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [34m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [34m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [34m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [35m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [35m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [35m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [35m30s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [35m40s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [35m50s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [36m00s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [36m10s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Still creating... [36m20s elapsed][0m[0m
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mchanged: [52.90.11.117]
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0mPLAY RECAP *********************************************************************
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0] (local-exec):[0m [0m52.90.11.117               : ok=218  changed=108  unreachable=0    failed=0    skipped=15   rescued=0    ignored=0
+
+[0m[1mmodule.splunk-server.aws_instance.splunk-server[0]: Creation complete after 36m27s [id=i-0033feba3f0bc1cc9][0m
+[0m[1mmodule.splunk-server.aws_eip.splunk_ip[0]: Creating...[0m[0m
+[0m[1mmodule.splunk-server.aws_eip.splunk_ip[0]: Creation complete after 6s [id=eipalloc-0624755d9236940ff][0m
+[0m[1m[32m
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+[0m
+                              __
+                            .d$$b
+                          .' TO$;\
+                         /  : TP._;
+                        / _.;  :Tb|
+                       /   /   ;j$j
+                   _.-"       d$$$$
+                 .' ..       d$$$$;
+                /  /P'      d$$$$P. |\
+               /   "      .d$$$P' |\^"l
+             .'           `T$P^"""""  :
+         ._.'      _.'                ;
+      `-.-".-'-' ._.       _.-"    .-"
+    `.-" _____  ._              .-"
+   -(.g$$$$$$$b.              .'
+     ""^^T$$$P^)            .(:
+       _/  -"  /.'         /:/;
+    ._.'-'`-'  ")/         /;/;
+ `-.-"..--""   " /         /  ;
+.-" ..--""        -'          :
+..--""--.-"         (\      .-(\
+  ..--""              `-\(\/;`
+    _.                      :
+                            ;`-
+                           :\
+                           ;  bug
+
+By: Splunk Threat Research Team [STRT] - research@splunk.com
+
+    
+
+Status Virtual Machines
+
+Name                          Status    IP Address    Instance ID
+----------------------------  --------  ------------  -------------------
+ar-splunk-ar-lab-key-pair-ar  running   34.197.14.98  i-0033feba3f0bc1cc9
+
+Access Guacamole via:
+	Web > http://34.197.14.98:8080/guacamole
+	username: Admin 
+	password: MySuperSecureHackathonPass!2025
+
+Access Splunk via:
+	Web > http://34.197.14.98:8000
+	SSH > ssh -i~/.ssh/id_rsa ubuntu@34.197.14.98
+	username: admin 
+	password: MySuperSecureHackathonPass!2025
+
+2025-07-25 15:36:16,199 - INFO - attack_range - [action] > show
+
+2025-07-26 07:11:15,414 - INFO - attack_range - [action] > show
+
