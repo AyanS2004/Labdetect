@@ -158,11 +158,23 @@ export function SimulationModal({ isOpen, onClose }: SimulationModalProps) {
     { id: 'Lazarus', name: 'Lazarus Group', description: 'North Korean cyber operations', techniques: 14 }
   ]
 
-  const generateTelemetryEvent = (step: SimulationStep): TelemetryEvent => {
+  const generateTelemetryEvent = (step?: SimulationStep): TelemetryEvent => {
+    if (!step) {
+      return {
+        id: `event_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+        timestamp: new Date().toISOString(),
+        source: 'Unknown',
+        event_type: 'unknown',
+        technique: 'Unknown',
+        mitre_id: 'T0000',
+        severity: 'low',
+        description: 'Unknown event',
+        siem_status: 'pending'
+      }
+    }
     const eventTypes = ['process_creation', 'network_connection', 'file_access', 'registry_modification', 'dns_query']
     const sources = ['Sysmon', 'Security', 'Network', 'Endpoint']
     const severities: ('low' | 'medium' | 'high' | 'critical')[] = ['low', 'medium', 'high', 'critical']
-    
     return {
       id: `event_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
       timestamp: new Date().toISOString(),
@@ -207,7 +219,7 @@ export function SimulationModal({ isOpen, onClose }: SimulationModalProps) {
         
         // Generate telemetry events
         if (Math.random() > 0.7) {
-          const currentStepData = simulationSteps[currentStep]
+          const currentStepData = simulationSteps[currentStep] || undefined
           const newEvent = generateTelemetryEvent(currentStepData)
           setTelemetryEvents(prev => [newEvent, ...prev.slice(0, 49)]) // Keep last 50 events
           
@@ -227,7 +239,7 @@ export function SimulationModal({ isOpen, onClose }: SimulationModalProps) {
 
   if (!isOpen) return null
 
-  const currentStepData = simulationSteps[currentStep]
+  const currentStepData = simulationSteps[currentStep] || null
   const completedSteps = simulationSteps.filter(step => step.status === 'completed').length
   const totalSteps = simulationSteps.length
 

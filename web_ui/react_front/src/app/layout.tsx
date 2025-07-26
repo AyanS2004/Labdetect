@@ -10,32 +10,39 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'AI Detection Engineering Lab | Advanced Threat Simulation',
-  description: 'Professional cybersecurity platform for APT simulation, detection analysis, and MITRE ATT&CK mapping',
-  keywords: 'cybersecurity, APT simulation, MITRE ATT&CK, threat detection, security analysis',
-  authors: [{ name: 'Detection Engineering Lab Team' }],
+  title: 'Detection Lab | Automated Breach Simulation & Multi-SIEM Detection Platform',
+  description: 'Next-generation cybersecurity platform for running automated, MITRE-mapped breach simulations, streaming real-time telemetry to multiple SIEMs, and converting detection rules across SIEM formats.',
+  keywords: 'cybersecurity, APT simulation, MITRE ATT&CK, SIEM integration, breach simulation, detection engineering, PySigma, Splunk, Elastic, Grafana',
+  authors: [{ name: 'Detection Lab Team' }],
   viewport: 'width=device-width, initial-scale=1',
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: 'white' },
     { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' }
   ],
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.svg', type: 'image/svg+xml' }
+    ],
+    apple: '/apple-touch-icon.png'
+  },
   openGraph: {
-    title: 'AI Detection Engineering Lab',
-    description: 'Advanced Threat Simulation & Detection Analysis Platform',
+    title: 'Detection Lab',
+    description: 'Automated Breach Simulation & Multi-SIEM Detection Platform',
     type: 'website',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Detection Engineering Lab Dashboard'
+        alt: 'Detection Lab Dashboard'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Detection Engineering Lab',
-    description: 'Advanced Threat Simulation & Detection Analysis Platform',
+    title: 'Detection Lab',
+    description: 'Automated Breach Simulation & Multi-SIEM Detection Platform',
     images: ['/og-image.png']
   },
   robots: {
@@ -52,9 +59,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body 
