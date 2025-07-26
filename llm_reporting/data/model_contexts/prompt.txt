@@ -1,0 +1,10 @@
+You are an expert SOC analyst. Evaluate the following Sigma rule and provide:
+- A short summary of what this rule detects
+- The MITRE ATT&CK techniques involved
+- Severity level (Low, Medium, High)
+- Detection quality and gaps (if any)
+- Suggestions to improve the rule
+- Any missing log sources
+
+Rule:
+{{RULE_JSON}}

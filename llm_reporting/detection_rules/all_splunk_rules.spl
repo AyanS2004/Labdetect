@@ -1,0 +1,13 @@
+source="WinEventLog:Security" EventCode=4624 LogonType=10 | table TargetUserName,IpAddress,LogonType
+
+CallTrace IN ("*VirtualAllocEx*", "*WriteProcessMemory*", "*CreateRemoteThread*") | table SourceImage,TargetImage,CallTrace
+
+source IN ("WinEventLog:Microsoft-Windows-PowerShell/Operational", "WinEventLog:PowerShellCore/Operational") EventCode=4104 ScriptBlockText IN ("*Invoke-Expression*", "*IEX*", "*FromBase64String*") | table EventCode,ScriptBlockText,Hostname,User
+
+Image="*powershell.exe" CommandLine IN ("*-enc *", "*-EncodedCommand*") | table CommandLine,User
+
+Image="*rundll32.exe" CommandLine IN ("*javascript*", "*mshtml*") | table CommandLine,ParentImage,Image
+
+source="WinEventLog:Security" EventCode=4657 ObjectName IN ("*Run*", "*RunOnce*") | table SubjectUserName,ObjectName,NewValue
+
+attachment_extension=".exe" subject IN ("*Invoice*", "*Urgent*") body IN ("*http://*", "*https://*") | table sender,subject,attachment_name

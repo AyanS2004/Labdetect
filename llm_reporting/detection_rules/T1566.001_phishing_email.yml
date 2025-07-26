@@ -1,0 +1,23 @@
+title: Phishing Email with Executable Attachment
+id: 7873b4d3-5f3f-4481-9f7f-c40b731e4b46
+logsource:
+  product: email
+detection:
+  selection:
+    attachment_extension:
+    - .exe
+    subject|contains:
+    - Invoice
+    - Urgent
+    body|contains:
+    - http://
+    - https://
+  condition: selection
+fields:
+- sender
+- subject
+- attachment_name
+level: high
+tags:
+- attack.initial_access
+- attack.t1566.001

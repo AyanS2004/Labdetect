@@ -1,0 +1,28 @@
+{
+  "title": "Potential Process Injection",
+  "id": "675d6c80-c95c-4d4f-95f3-a27c7d9333f9",
+  "logsource": {
+    "product": "windows",
+    "category": "process_access"
+  },
+  "detection": {
+    "selection": {
+      "CallTrace|contains": [
+        "VirtualAllocEx",
+        "WriteProcessMemory",
+        "CreateRemoteThread"
+      ]
+    },
+    "condition": "selection"
+  },
+  "fields": [
+    "SourceImage",
+    "TargetImage",
+    "CallTrace"
+  ],
+  "level": "critical",
+  "tags": [
+    "attack.defense_evasion",
+    "attack.t1055"
+  ]
+}

@@ -1,0 +1,24 @@
+title: Suspicious PowerShell Script Block
+id: c955466a-829e-4056-9c01-2e21ea4dfda8
+description: Detects suspicious PowerShell execution via EventCode 4104 (script block
+  logging)
+logsource:
+  product: windows
+  service: powershell
+detection:
+  selection:
+    EventID: 4104
+    ScriptBlockText|contains:
+    - Invoke-Expression
+    - IEX
+    - FromBase64String
+  condition: selection
+fields:
+- EventID
+- ScriptBlockText
+- Hostname
+- User
+level: high
+tags:
+- attack.execution
+- attack.t1059.001

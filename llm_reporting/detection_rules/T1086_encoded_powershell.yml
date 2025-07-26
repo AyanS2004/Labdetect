@@ -1,0 +1,19 @@
+title: Encoded PowerShell Command
+id: 314cd7e9-cf85-4fe9-9048-f3c2f69f69de
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    Image|endswith: powershell.exe
+    CommandLine|contains:
+    - '-enc '
+    - -EncodedCommand
+  condition: selection
+fields:
+- CommandLine
+- User
+level: high
+tags:
+- attack.execution
+- attack.t1086

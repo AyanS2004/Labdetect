@@ -1,0 +1,25 @@
+{
+  "title": "RDP Login Detection",
+  "id": "de154334-02d5-4690-ad96-707d5d556469",
+  "logsource": {
+    "product": "windows",
+    "service": "security"
+  },
+  "detection": {
+    "selection": {
+      "EventID": 4624,
+      "LogonType": 10
+    },
+    "condition": "selection"
+  },
+  "fields": [
+    "TargetUserName",
+    "IpAddress",
+    "LogonType"
+  ],
+  "level": "medium",
+  "tags": [
+    "attack.lateral_movement",
+    "attack.t1021.001"
+  ]
+}

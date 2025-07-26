@@ -1,0 +1,28 @@
+{
+  "title": "Suspicious Rundll32 Execution",
+  "id": "3a0e95b9-8924-48e5-9d9f-7beb1b48701a",
+  "logsource": {
+    "product": "windows",
+    "category": "process_creation"
+  },
+  "detection": {
+    "selection": {
+      "Image|endswith": "rundll32.exe",
+      "CommandLine|contains": [
+        "javascript",
+        "mshtml"
+      ]
+    },
+    "condition": "selection"
+  },
+  "fields": [
+    "CommandLine",
+    "ParentImage",
+    "Image"
+  ],
+  "level": "medium",
+  "tags": [
+    "attack.defense_evasion",
+    "attack.t1218.011"
+  ]
+}
